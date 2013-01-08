@@ -1,0 +1,13 @@
+name: MobSkins
+main: me.cyberstalk.plugin.mobskins.MobSkins
+version: 0.0.1
+author: mikenon
+description: Does what it says on the tin.
+depend: [Spout]
+permissions:
+  mobskins.texture.add:
+    description: Change a zombie's texture manually
+    default: op
+  mobskins.texture.remove:
+    description: Reset a zombie's texture manually
+    default: op

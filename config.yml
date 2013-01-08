@@ -1,0 +1,12 @@
+debug: true
+chance: 30
+manualitem: 369
+url_base: 'http://mcdefiance.non/assets/skins/'
+sound: 'http://mcalerts.com/assets/plugins/MobSkins/crack.wav'
+range_desert: 24
+range_forest: 16
+range_iceland: 13
+range_mountain: 9
+range_mushroom: 8
+range_plains: 37
+range_water: 13
