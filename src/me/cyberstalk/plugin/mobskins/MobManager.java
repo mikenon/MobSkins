@@ -46,8 +46,8 @@ public class MobManager {
 	}
 	
 	public static void setMobSkin(LivingEntity target, String url){
-//		Spout.getServer().setEntitySkin(target, url, EntitySkinType.DEFAULT);
-		MobSkins.getInstance().SS.setEntitySkin((LivingEntity) target, url, EntitySkinType.DEFAULT);
+		Spout.getServer().setEntitySkin(target, url, EntitySkinType.DEFAULT);
+//		MobSkins.getInstance().SS.setEntitySkin((LivingEntity) target, url, EntitySkinType.DEFAULT);
 		lggr.Debug("Entity: "+target.getType().name().toLowerCase()+" Skin: "+url);
 	}
 	

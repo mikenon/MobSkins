@@ -5,7 +5,7 @@ import java.util.UUID;
 //import org.bukkit.Location;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
+//import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -30,8 +30,8 @@ public class MS_EntityListener implements Listener{
 	
 	@EventHandler
 	public void onCreatureSpawn(CreatureSpawnEvent event){
-		if(!event.getEntityType().equals(EntityType.ZOMBIE))
-			return;
+//		if(!event.getEntityType().equals(EntityType.ZOMBIE))
+//			return;
 		int r = (int)(Math.random() * (100));
 		if(r > MobSkins.conf.getChance())
 			return;
@@ -42,8 +42,8 @@ public class MS_EntityListener implements Listener{
 	@EventHandler
 	public void onChunkLoad(ChunkLoadEvent event){
 		for(Entity e : event.getChunk().getEntities()){
-			if(!e.getType().equals(EntityType.ZOMBIE))
-				continue;
+//			if(!e.getType().equals(EntityType.ZOMBIE))
+//				continue;
 			int r = (int)(Math.random() * (100));
 			if(r > MobSkins.conf.getChance())
 				continue;
@@ -55,8 +55,8 @@ public class MS_EntityListener implements Listener{
 	
 	@EventHandler
 	public void onEntityDeath(EntityDeathEvent event){
-		if(!event.getEntityType().equals(EntityType.ZOMBIE))
-			return;
+//		if(!event.getEntityType().equals(EntityType.ZOMBIE))
+//			return;
 		if(!MobManager.isMob(event.getEntity().getUniqueId())){
 			return;
 		}

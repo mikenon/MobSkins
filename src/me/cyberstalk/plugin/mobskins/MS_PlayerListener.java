@@ -8,7 +8,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 //import org.bukkit.entity.EntityType;
-import org.bukkit.entity.EntityType;
+//import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -29,8 +29,8 @@ public class MS_PlayerListener implements Listener{
 	public void onPlayerInteractEntity(PlayerInteractEntityEvent event) {
 		Player p = event.getPlayer();
 		Entity e = event.getRightClicked();
-		if(!e.getType().equals(EntityType.ZOMBIE))
-			return;
+//		if(!e.getType().equals(EntityType.ZOMBIE))
+//			return;
 		if(p.getItemInHand().getTypeId()!=MobSkins.conf.getManualItem())
 			return;
 		Location l = e.getLocation();
