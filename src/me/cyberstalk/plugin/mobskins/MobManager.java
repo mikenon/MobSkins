@@ -3,11 +3,13 @@ package me.cyberstalk.plugin.mobskins;
 import java.util.HashMap;
 import java.util.UUID;
 
-import me.cyberstalk.plugin.mobskins.util.lggr;
-
+import org.bukkit.Bukkit;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Player;
 import org.getspout.spoutapi.Spout;
+import org.getspout.spoutapi.SpoutManager;
 import org.getspout.spoutapi.player.EntitySkinType;
+import org.getspout.spoutapi.player.SpoutPlayer;
 
 public class MobManager {
 
@@ -46,9 +48,21 @@ public class MobManager {
 	}
 	
 	public static void setMobSkin(LivingEntity target, String url){
-		Spout.getServer().setEntitySkin(target, url, EntitySkinType.DEFAULT);
+//		Spout.getServer().setEntitySkin(target, url, EntitySkinType.DEFAULT);
 //		MobSkins.getInstance().SS.setEntitySkin((LivingEntity) target, url, EntitySkinType.DEFAULT);
-		lggr.Debug("Entity: "+target.getType().name().toLowerCase()+" Skin: "+url);
+//		lggr.Debug("Entity: "+target.getType().name().toLowerCase()+" Skin: "+url);
+		
+		for (Player player : Bukkit.getOnlinePlayers()) {
+			final SpoutPlayer splayer = SpoutManager.getPlayer(player);
+			if (!splayer.isSpoutCraftEnabled()) {
+				continue;
+			}
+//			try {
+				splayer.setEntitySkin(target, url, EntitySkinType.DEFAULT);
+//			} catch (Exception ioe) {
+//				lggr.Debug("Couldn't apply skin: " + url + ". Skipping texture application.");
+//			}
+		}
 	}
 	
 	public static void resetMobSkin(LivingEntity target){

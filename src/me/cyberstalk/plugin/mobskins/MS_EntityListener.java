@@ -3,18 +3,19 @@ package me.cyberstalk.plugin.mobskins;
 import java.util.UUID;
 
 //import org.bukkit.Location;
-import org.bukkit.Location;
+//import org.bukkit.Location;
 import org.bukkit.entity.Entity;
-//import org.bukkit.entity.EntityType;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.EntityTargetLivingEntityEvent;
 //import org.bukkit.event.world.ChunkLoadEvent;
-import org.bukkit.event.world.ChunkLoadEvent;
+//import org.bukkit.event.world.ChunkLoadEvent;
 import org.bukkit.event.world.ChunkUnloadEvent;
 import org.getspout.spoutapi.SpoutManager;
 //import org.getspout.spoutapi.player.EntitySkinType;
@@ -28,10 +29,12 @@ public class MS_EntityListener implements Listener{
 		plugin = instance;
 	}
 	
-	@EventHandler
+	@EventHandler(priority = EventPriority.LOWEST)
 	public void onCreatureSpawn(CreatureSpawnEvent event){
-//		if(!event.getEntityType().equals(EntityType.ZOMBIE))
-//			return;
+		if(event.getEntity().isDead())
+			return;
+		if(!event.getEntityType().equals(EntityType.ZOMBIE))
+			return;
 		int r = (int)(Math.random() * (100));
 		if(r > MobSkins.conf.getChance())
 			return;
@@ -39,24 +42,24 @@ public class MS_EntityListener implements Listener{
 		MobManager.mobSet(event.getEntity().getUniqueId());
 	}
 	
-	@EventHandler
-	public void onChunkLoad(ChunkLoadEvent event){
-		for(Entity e : event.getChunk().getEntities()){
+//	@EventHandler
+//	public void onChunkLoad(ChunkLoadEvent event){
+//		for(Entity e : event.getChunk().getEntities()){
 //			if(!e.getType().equals(EntityType.ZOMBIE))
 //				continue;
-			int r = (int)(Math.random() * (100));
-			if(r > MobSkins.conf.getChance())
-				continue;
-			Location l = e.getLocation();
-			MobManager.setMobSkin((LivingEntity) e, MobSkins.getUtil().buildSkinUrl(l));
-			MobManager.mobSet(e.getUniqueId());
-		}
-	}
+//			int r = (int)(Math.random() * (100));
+//			if(r > MobSkins.conf.getChance())
+//				continue;
+//			Location l = e.getLocation();
+//			MobManager.setMobSkin((LivingEntity) e, MobSkins.getUtil().buildSkinUrl(l));
+//			MobManager.mobSet(e.getUniqueId());
+//		}
+//	}
 	
 	@EventHandler
 	public void onEntityDeath(EntityDeathEvent event){
-//		if(!event.getEntityType().equals(EntityType.ZOMBIE))
-//			return;
+		if(!event.getEntityType().equals(EntityType.ZOMBIE))
+			return;
 		if(!MobManager.isMob(event.getEntity().getUniqueId())){
 			return;
 		}
