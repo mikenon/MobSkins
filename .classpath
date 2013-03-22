@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/Users/mike/Dev/mcdefiance_workspace/imports/Vault.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://mythcraft.dyndns.org/javadoc/vault/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/mike/Dev/mcdefiance_workspace/imports/1.3.2_Final/craftbukkit-1.3.2-R3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/mike/Dev/mcdefiance_workspace/imports/1.3.2_Final/spoutplugin-1.3.2-R3.0-SNAPSHOT(1).jar" sourcepath="/Users/mike/Dev/mcdefiance_workspace/imports/1.3.2_Final/spoutplugin-1.3.2-R3.0-SNAPSHOT-sources(1).jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/Users/mike/Dev/mcdefiance_workspace/imports/1.3.2_Final/spoutplugin-1.3.2-R3.0-SNAPSHOT-javadoc(1).jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
